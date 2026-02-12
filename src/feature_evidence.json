@@ -1,0 +1,66 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-all-visible-shop-branding-text-from-the-generic-name-e-g-rajasthan-sweets-to-marward-sweets-pilani-across-the-header-footer-and-landing-home-content",
+      "featureTitle": "Update all visible shop branding text from the generic name (e.g., \"Rajasthan Sweets\") to \"Marward Sweets Pilani\" across the header, footer, and landing/home content.",
+      "files": [
+        "frontend/src/components/AppLayout.tsx",
+        "frontend/src/pages/LandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-the-shop-instagram-contact-using-the-exact-instagram-id-marward-sweets-pilani-and-link-it-to-https-instagram-com-marward-sweets-pilani-open-in-a-new-tab-with-safe-rel-attributes-replace-placeholder-social-links-that-currently-use-with-a-working-instagram-link-at-minimum",
+      "featureTitle": "Display the shop Instagram contact using the exact Instagram ID \"marward_sweets_pilani\" and link it to https://instagram.com/marward_sweets_pilani (open in a new tab with safe rel attributes). Replace placeholder social links that currently use \"#\" with a working Instagram link at minimum.",
+      "files": [
+        "frontend/src/components/AppLayout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-owner-ui-to-manage-the-sweets-catalog-after-signing-in-the-owner-can-1-add-a-new-sweet-name-description-category-price-image-path-and-2-update-the-price-for-an-existing-sweet-ensure-the-catalog-ui-updates-after-successful-changes",
+      "featureTitle": "Add an owner UI to manage the sweets catalog: after signing in, the owner can (1) add a new sweet (name, description, category, price, image path) and (2) update the price for an existing sweet. Ensure the catalog UI updates after successful changes.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AppLayout.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/OwnerCatalogPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Marward Sweets Pilani branding, Instagram contact, and owner catalog management UI",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Replace all visible shop branding text with \"Marward Sweets Pilani\" across the app header, footer, and landing content.",
+      "acceptanceCriteria": [
+        "Header brand text shows \"Marward Sweets Pilani\".",
+        "Footer brand text and copyright line use \"Marward Sweets Pilani\".",
+        "No user-facing text displays \"Rajasthan Sweets\" as the shop name anywhere in the app."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AppLayout.tsx",
+          "operation": "modify",
+          "description": "Update visible header/footer brand text and footer copyright to \"Marward Sweets Pilani\"; ensure no remaining user-facing occurrences of \"Rajasthan Sweets\"."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Update landing/home hero and related user-facing copy that implies the generic shop name so branding aligns with \"Marward Sweets Pilani\" while keeping English UI text."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Show and link the shop Instagram handle \"@marward_sweets_pilani\" to the correct Instagram URL with safe new-tab behavior.",
+      "acceptanceCriteria": [
+        "The footer Instagram icon/link navigates to https://instagram.com/marward_sweets_pilani.",
+        "Instagram link opens in a new tab and includes rel=\"noopener noreferrer\".",
+        "The Instagram handle is shown somewhere in the UI as \"@marward_sweets_pilani\" (English UI text)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AppLayout.tsx",
+          "operation": "modify",
+          "description": "Replace the placeholder Instagram footer link (currently \"#\") with https://instagram.com/marward_sweets_pilani, open in a new tab with rel=\"noopener noreferrer\", and display the handle as \"@marward_sweets_pilani\" in English. (If using shadcn-ui components for layout/typography, verify the component's usage instructions before implementing.)"
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add an owner-only UI (gated by Internet Identity sign-in and admin/owner role) to add sweets and update sweet prices, and refresh catalog data after successful changes.",
+      "acceptanceCriteria": [
+        "There is a clear navigation entry (or button) to reach an \"Owner\"/\"Manage Catalog\" screen.",
+        "The owner screen requires Internet Identity sign-in; unauthenticated users are prompted to sign in.",
+        "The owner screen prevents non-owners from performing add/update actions and shows an English error message if attempted.",
+        "After adding a sweet, it appears in the Catalog page without a hard refresh (React Query invalidation/refetch is triggered).",
+        "After updating a price, the updated price appears in Catalog and Sweet Details views without a hard refresh."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/OwnerCatalogPage.tsx",
+          "operation": "create",
+          "description": "Create an \"Owner / Manage Catalog\" screen with: (1) Internet Identity sign-in prompt when unauthenticated, (2) admin/owner-only guard using the authorization role checks, (3) form to add a sweet (name, description, category, price, image path), and (4) controls to update price for an existing sweet. Use React Query mutations that invalidate/refetch the sweets query on success and show English success/error messages. Use shadcn-ui form/layout primitives (e.g., Button/Input/Select/Card) by composition only; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add React Query hooks/mutations needed by the Owner screen: caller role/admin query (for owner gating), add-sweet mutation, and update-price mutation; ensure onSuccess invalidates the existing ['sweets'] query so Catalog and Sweet Details refresh without a hard reload. (This relies on the authorization system and the existing actor wiring; verify the component's usage instructions before implementing.)"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the new owner management screen into app navigation by extending the Page union/state and rendering OwnerCatalogPage when selected; ensure navigation scroll behavior remains consistent."
+        },
+        {
+          "path": "frontend/src/components/AppLayout.tsx",
+          "operation": "modify",
+          "description": "Add a clear navigation entry/button for \"Owner\" / \"Manage Catalog\" in both desktop and mobile navigation that routes to the Owner screen. Keep the Owner screen itself responsible for sign-in prompting and non-owner access messaging. (If using shadcn-ui Button or other UI components, verify the component's usage instructions before implementing.)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a customer-facing sweet shop app for Marward Sweets Pilani showcasing varieties of sweets and highlighting Rajasthan culture, with user ratings for shop hygiene, plus owner controls to add sweets and update prices, and display the shop’s Instagram contact.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-customer-facing-sweet-shop-web-app-that-lets-users-browse-the-full-variety-of-sweets-a-catalog-with-name-description-price-category-and-an-image-per-sweet",
+      "title": "Create a customer-facing sweet shop web app that lets users browse the full variety of sweets (a catalog with name, description, price, category, and an image per sweet).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-hygiene-rating-and-review-functionality-for-the-sweet-shop-so-customers-can-rate-cleanliness-hygiene-and-optionally-leave-a-short-text-review",
+      "title": "Implement hygiene rating and review functionality for the sweet shop so customers can rate cleanliness/hygiene and optionally leave a short text review.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-internet-identity-sign-in-to-associate-hygiene-reviews-with-a-user-and-handle-anonymous-users-by-prompting-them-to-sign-in-before-submitting-a-rating",
+      "title": "Add Internet Identity sign-in to associate hygiene reviews with a user, and handle anonymous users by prompting them to sign in before submitting a rating.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-rajasthan-cultural-visual-theme-across-the-app-colors-typography-spacing-and-decorative-motifs-without-using-a-blue-purple-default-look",
+      "title": "Apply a consistent Rajasthan cultural visual theme across the app (colors, typography, spacing, and decorative motifs) without using a blue/purple default look.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-home-landing-page-that-introduces-the-sweet-shop-and-highlights-rajasthan-culture-with-navigation-to-the-sweets-catalog-and-hygiene-ratings-section",
+      "title": "Add a simple home/landing page that introduces the sweet shop and highlights Rajasthan culture, with navigation to the sweets catalog and hygiene ratings section.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-include-required-static-image-assets-logo-hero-banner-and-a-small-set-of-sweet-illustrations-and-render-them-from-frontend-static-assets-not-through-the-backend",
+      "title": "Generate and include required static image assets (logo, hero banner, and a small set of sweet illustrations) and render them from frontend static assets (not through the backend).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-visible-shop-branding-text-from-the-generic-name-e-g-rajasthan-sweets-to-marward-sweets-pilani-across-the-header-footer-and-landing-home-content",
+      "title": "Update all visible shop branding text from the generic name (e.g., \"Rajasthan Sweets\") to \"Marward Sweets Pilani\" across the header, footer, and landing/home content.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-the-shop-instagram-contact-using-the-exact-instagram-id-marward-sweets-pilani-and-link-it-to-https-instagram-com-marward-sweets-pilani-open-in-a-new-tab-with-safe-rel-attributes-replace-placeholder-social-links-that-currently-use-with-a-working-instagram-link-at-minimum",
+      "title": "Display the shop Instagram contact using the exact Instagram ID \"marward_sweets_pilani\" and link it to https://instagram.com/marward_sweets_pilani (open in a new tab with safe rel attributes). Replace placeholder social links that currently use \"#\" with a working Instagram link at minimum.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-owner-ui-to-manage-the-sweets-catalog-after-signing-in-the-owner-can-1-add-a-new-sweet-name-description-category-price-image-path-and-2-update-the-price-for-an-existing-sweet-ensure-the-catalog-ui-updates-after-successful-changes",
+      "title": "Add an owner UI to manage the sweets catalog: after signing in, the owner can (1) add a new sweet (name, description, category, price, image path) and (2) update the price for an existing sweet. Ensure the catalog UI updates after successful changes.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Customer app to browse all varieties of sweets (sweet catalog/listing)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Allow customers to rate/review the sweet shop’s hygiene",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Include Rajasthan cultural theme/content in the app (branding/UX/content)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Owner/admin can manage sweets catalog (add new sweets and update prices)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add shop contact/social info (display Instagram: @marward_sweets_pilani)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add backend support for owner catalog management: persist sweets as a mutable collection and implement authenticated, owner-only methods to (1) add a new sweet and (2) update the price of an existing sweet.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Marward Sweets Pilani",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

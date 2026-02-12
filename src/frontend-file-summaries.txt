@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component managing page routing state including the new 'owner' page and rendering the appropriate page component within the AppLayout wrapper.",
+  "frontend/src/components/AppLayout.tsx": "Shared layout component with header navigation, logo showing \"Marward Sweets Pilani\", authentication controls, mobile menu, owner navigation link, and footer with branding and Instagram link to @marward_sweets_pilani.",
+  "frontend/src/pages/LandingPage.tsx": "Home page featuring a hero section with updated branding for Marward Sweets Pilani, feature highlights, and call-to-action buttons to navigate to catalog and hygiene pages.",
+  "frontend/src/pages/CatalogPage.tsx": "Sweet catalog page with search and category filtering, displaying a responsive grid of sweet cards.",
+  "frontend/src/pages/SweetDetailPage.tsx": "Detailed view of a single sweet showing full description, category, price, and image with navigation back to catalog.",
+  "frontend/src/pages/HygienePage.tsx": "Hygiene ratings page displaying aggregate stats, review submission form, and list of recent customer reviews.",
+  "frontend/src/components/SweetCard.tsx": "Reusable card component for displaying sweet information in the catalog grid with image, name, description, price, and category badge.",
+  "frontend/src/components/HygieneStats.tsx": "Component displaying aggregate hygiene statistics including average rating and total review count.",
+  "frontend/src/components/HygieneReviewForm.tsx": "Form component for submitting hygiene ratings and optional review text, with authentication gating and success feedback.",
+  "frontend/src/components/HygieneReviewList.tsx": "Scrollable list component displaying recent hygiene reviews with ratings and review text.",
+  "frontend/src/components/RatingStars.tsx": "Reusable star rating component supporting both display and interactive input modes with configurable sizes.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching sweets and reviews from the backend, submitting reviews, checking caller user role, and owner-only mutations for adding sweets and updating prices with cache invalidation.",
+  "frontend/src/index.css": "Global styles with Rajasthan-inspired OKLCH color system featuring warm terracotta, marigold, and sand palettes for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom Rajasthan-themed color tokens (terracotta, marigold, sand) and design system settings.",
+  "frontend/src/pages/OwnerCatalogPage.tsx": "Owner-only catalog management page with Internet Identity authentication gating, admin role verification, forms to add new sweets and update prices, and React Query mutations that refresh catalog data on success."
+}

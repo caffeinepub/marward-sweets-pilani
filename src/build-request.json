@@ -1,0 +1,112 @@
+{
+  "kind": "build_request",
+  "title": "Set shop branding (Marward Sweets Pilani), add Instagram link, and add owner controls to add sweets & update prices",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "text": "Update all visible shop branding text from the generic name (e.g., \"Rajasthan Sweets\") to \"Marward Sweets Pilani\" across the header, footer, and landing/home content.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Shop name is marward sweets pilani"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header brand text shows \"Marward Sweets Pilani\".",
+        "Footer brand text and copyright line use \"Marward Sweets Pilani\".",
+        "No user-facing text displays \"Rajasthan Sweets\" as the shop name anywhere in the app."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Display the shop Instagram contact using the exact Instagram ID \"marward_sweets_pilani\" and link it to https://instagram.com/marward_sweets_pilani (open in a new tab with safe rel attributes). Replace placeholder social links that currently use \"#\" with a working Instagram link at minimum.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Instagram id is marward_sweets_pilani"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The footer Instagram icon/link navigates to https://instagram.com/marward_sweets_pilani.",
+        "Instagram link opens in a new tab and includes rel=\"noopener noreferrer\".",
+        "The Instagram handle is shown somewhere in the UI as \"@marward_sweets_pilani\" (English UI text)."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add backend support for owner catalog management: persist sweets as a mutable collection and implement authenticated, owner-only methods to (1) add a new sweet and (2) update the price of an existing sweet.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "And I own change the price and add sweet"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes an update-price method that changes the stored price for a specified sweet and is reflected in subsequent getAllSweets calls.",
+        "Backend exposes an add-sweet method that appends a new sweet to the stored catalog and is reflected in subsequent getAllSweets calls.",
+        "Both mutations are owner-only (non-owner callers are rejected/ignored with a clear error result).",
+        "Sweets data remains available after page refresh (i.e., not purely in-memory within a single request)."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Add an owner UI to manage the sweets catalog: after signing in, the owner can (1) add a new sweet (name, description, category, price, image path) and (2) update the price for an existing sweet. Ensure the catalog UI updates after successful changes.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "And I own change the price and add sweet"
+        ]
+      },
+      "acceptanceCriteria": [
+        "There is a clear navigation entry (or button) to reach an \"Owner\"/\"Manage Catalog\" screen.",
+        "The owner screen requires Internet Identity sign-in; unauthenticated users are prompted to sign in.",
+        "The owner screen prevents non-owners from performing add/update actions and shows an English error message if attempted.",
+        "After adding a sweet, it appears in the Catalog page without a hard refresh (React Query invalidation/refetch is triggered).",
+        "After updating a price, the updated price appears in Catalog and Sweet Details views without a hard refresh."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor in backend/main.mo (no additional backend services).",
+    "Do not edit files under frontend/src/components/ui or any path listed in frontend.immutablePaths (compose them instead).",
+    "Use English for any user-facing text.",
+    "Instagram ID must be exactly: marward_sweets_pilani."
+  ],
+  "nonGoals": [
+    "Implementing third-party social media APIs or embedding Instagram feeds.",
+    "Adding non-Internet-Identity authentication methods.",
+    "Implementing payments, checkout, or delivery ordering flows."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [
+      "Brand the app as \"Marward Sweets Pilani\" and show Instagram contact @marward_sweets_pilani.",
+      "Enable owner to add sweets and update sweet prices from the app."
+    ],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for user-facing text."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}
